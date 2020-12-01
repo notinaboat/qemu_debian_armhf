@@ -3,22 +3,19 @@
 # https://translatedcode.wordpress.com
 # /2016/11/03/installing-debian-on-qemus-32-bit-arm-virt-board/
 
-KERNEL_URL=\
-http://http.us.debian.org\
-/debian/dists/buster/main/installer-armhf/current/images/netboot/vmlinuz
 
-INITRD_URL=\
-http://http.us.debian.org\
-/debian/dists/buster/main/installer-armhf/current/images/netboot/initrd.gz
+BUSTER_URL=http://http.us.debian.org/debian/dists/buster/main
+KERNEL_URL=$(BUSTER_URL)/installer-armhf/current/images/netboot/vmlinuz
+INITRD_URL=$(BUSTER_URL)/installer-armhf/current/images/netboot/initrd.gz
 
 
 all: boot_system
 
 boot/vmlinuz_installer:
-	curl -L $KERNEL_URL > $@
+	curl -L $(KERNEL_URL) > $@
 
 boot/initrd_installer.gz:
-	curl -L $INITRD_URL > $@
+	curl -L $(INITRD_URL) > $@
 
 debian.qcow2:
 	qemu-img create -f qcow2 $@ 4G
