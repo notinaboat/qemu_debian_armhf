@@ -3,9 +3,9 @@ qemu-system-arm                                                                \
     -cpu     max                                                               \
     -smp     4                                                                 \
     -m       4G                                                                \
-    -kernel  vmlinuz-4.19.0-12-armmp-lpae                                      \
+    -kernel  boot/vmlinuz                                                      \
+    -initrd  boot/initrd.gz                                                    \
     -append  "root=/dev/vda2"                                                  \
-    -initrd  initrd.img-4.19.0-12-armmp-lpae                                   \
     -device  virtio-blk-device,drive=disk0                                     \
     -drive   if=none,id=disk0,file=debian.qcow2                                \
     -device  virtio-net-device,netdev=net0                                     \

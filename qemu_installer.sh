@@ -3,8 +3,8 @@ qemu-system-arm                                                                \
     -cpu     max                                                               \
     -smp     4                                                                 \
     -m       4G                                                                \
-    -kernel  vmlinuz                                                           \
-    -initrd  initrd.gz                                                         \
+    -kernel  boot/vmlinuz_installer                                            \
+    -initrd  boot/initrd_installer.gz                                          \
     -device  virtio-blk-device,drive=disk0                                     \
     -drive   if=none,id=disk0,file=debian.qcow2                                \
     -device  virtio-net-device,netdev=net0                                     \
