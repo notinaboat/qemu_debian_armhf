@@ -25,4 +25,3 @@ if [ -z "$BOOTFILE" ]; then
     exit 1
 fi
 virt-copy-out -a $IMAGE /boot/$BOOTFILE .
-mv $BOOTFILE $COPYTO
